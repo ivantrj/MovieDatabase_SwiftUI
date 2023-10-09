@@ -17,6 +17,9 @@
 		2CE3DD472AD41F2700B72752 /* MovieGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3DD462AD41F2700B72752 /* MovieGridView.swift */; };
 		2CE3DD4A2AD432B500B72752 /* MovieGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3DD492AD432B500B72752 /* MovieGridItem.swift */; };
 		2CE3DD4C2AD43D7900B72752 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3DD4B2AD43D7900B72752 /* SearchView.swift */; };
+		7D3F519B2AD489CD0051F3CC /* Watchlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F519A2AD489CD0051F3CC /* Watchlist.swift */; };
+		7D3F519D2AD48A030051F3CC /* WatchlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F519C2AD48A030051F3CC /* WatchlistViewModel.swift */; };
+		7DF1D2152AD462AD009BEFD6 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF1D2142AD462AD009BEFD6 /* WatchlistView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		2CE3DD462AD41F2700B72752 /* MovieGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGridView.swift; sourceTree = "<group>"; };
 		2CE3DD492AD432B500B72752 /* MovieGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGridItem.swift; sourceTree = "<group>"; };
 		2CE3DD4B2AD43D7900B72752 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		7D3F519A2AD489CD0051F3CC /* Watchlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watchlist.swift; sourceTree = "<group>"; };
+		7D3F519C2AD48A030051F3CC /* WatchlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewModel.swift; sourceTree = "<group>"; };
+		7DF1D2142AD462AD009BEFD6 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 			children = (
 				2CE3DD482AD432A600B72752 /* Views */,
 				2CE3DD452AD41E5200B72752 /* Model */,
+				7D3F51972AD488B80051F3CC /* ViewModel */,
 				2CE3DD442AD41E4D00B72752 /* Screens */,
 				2CE3DD302AD41D2300B72752 /* MovieDatabaseApp.swift */,
 				2CE3DD342AD41D2500B72752 /* Assets.xcassets */,
@@ -87,8 +94,8 @@
 				2CE3DD322AD41D2300B72752 /* MovieTabView.swift */,
 				2CE3DD4B2AD43D7900B72752 /* SearchView.swift */,
 				2CE3DD462AD41F2700B72752 /* MovieGridView.swift */,
-				2CE3DD402AD41D5100B72752 /* MovieViewModel.swift */,
 				2CE3DD422AD41E0F00B72752 /* MovieDetailView.swift */,
+				7DF1D2142AD462AD009BEFD6 /* WatchlistView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -97,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				2CE3DD3E2AD41D3800B72752 /* Movie.swift */,
+				7D3F519A2AD489CD0051F3CC /* Watchlist.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,6 +115,15 @@
 				2CE3DD492AD432B500B72752 /* MovieGridItem.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7D3F51972AD488B80051F3CC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2CE3DD402AD41D5100B72752 /* MovieViewModel.swift */,
+				7D3F519C2AD48A030051F3CC /* WatchlistViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +154,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					2CE3DD2C2AD41D2300B72752 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -181,11 +198,14 @@
 			files = (
 				2CE3DD432AD41E0F00B72752 /* MovieDetailView.swift in Sources */,
 				2CE3DD332AD41D2300B72752 /* MovieTabView.swift in Sources */,
+				7D3F519D2AD48A030051F3CC /* WatchlistViewModel.swift in Sources */,
 				2CE3DD312AD41D2300B72752 /* MovieDatabaseApp.swift in Sources */,
+				7D3F519B2AD489CD0051F3CC /* Watchlist.swift in Sources */,
 				2CE3DD3F2AD41D3800B72752 /* Movie.swift in Sources */,
 				2CE3DD4C2AD43D7900B72752 /* SearchView.swift in Sources */,
 				2CE3DD412AD41D5100B72752 /* MovieViewModel.swift in Sources */,
 				2CE3DD4A2AD432B500B72752 /* MovieGridItem.swift in Sources */,
+				7DF1D2152AD462AD009BEFD6 /* WatchlistView.swift in Sources */,
 				2CE3DD472AD41F2700B72752 /* MovieGridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +249,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -289,6 +310,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

@@ -11,6 +11,8 @@ struct MovieDetailView: View {
     
     let movie: Movie
     @Binding var isShowingDetail: Bool
+    @State private var isAddedToWatchlist = false
+    @StateObject var viewModel = WatchlistViewModel()
     
     var body: some View {
         VStack {
@@ -50,6 +52,24 @@ struct MovieDetailView: View {
                         .multilineTextAlignment(.center)
                         .font(.body)
                         .padding()
+                    
+                    Button(action: {
+                                if isAddedToWatchlist {
+                                    viewModel.removeMovieFromWatchlist(movie: movie)
+                                } else {
+                                    viewModel.addMovieToWatchlist(movie: movie)
+                                }
+                                isAddedToWatchlist.toggle()
+                            }) {
+                                Text(isAddedToWatchlist ? "Remove from Watchlist" : "Add to Watchlist")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                                    .frame(width: 260, height: 50)
+                                    .foregroundColor(.white)
+                                    .background(isAddedToWatchlist ? .red : .blue)
+                                    .cornerRadius(10)
+                                    .padding(.bottom, 30)
+                            }
                 }
             }
             
@@ -72,14 +92,13 @@ struct MovieDetailView: View {
                     .imageScale(.small)
                     .frame(width: 44, height: 44)
                     .foregroundColor(.black)
-                
             }
         }, alignment: .topTrailing)
     }
 }
 
-struct MovieDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        MovieDetailView(movie: MockData.sampleMovie, isShowingDetail: .constant(true))
-    }
-}
+//struct MovieDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MovieDetailView(movie: MockData.sampleMovie, isShowingDetail: .constant(true), watchlistViewModel: WatchlistViewModel)
+//    }
+//}

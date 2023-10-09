@@ -9,8 +9,9 @@ import SwiftUI
 
 struct MovieGridView: View {
     @ObservedObject var movieViewModel = MovieViewModel()
+    @StateObject var viewModel = WatchlistViewModel()
     @State private var selectedMovie: Movie?
-    @State private var isShowingDetail = false
+
 
     
     var body: some View {
@@ -26,7 +27,7 @@ struct MovieGridView: View {
                                     MovieGridItem(movie: movie)
                                         .onTapGesture {
                                             selectedMovie = movie
-                                            isShowingDetail = true
+                                            viewModel.isShowingDetail = true
                                         }
                                 }
                             }
@@ -35,22 +36,22 @@ struct MovieGridView: View {
                     }
                 }
                 .navigationTitle("🍿Movies")
-                .disabled(isShowingDetail)
+                .disabled(viewModel.isShowingDetail)
             }
             .onAppear {
                 movieViewModel.fetchMovies()
             }
-            .blur(radius: isShowingDetail ? 20 : 0)
+            .blur(radius: viewModel.isShowingDetail ? 20 : 0)
             
-            if isShowingDetail {
-                MovieDetailView(movie: selectedMovie!, isShowingDetail: $isShowingDetail)
+            if viewModel.isShowingDetail {
+                MovieDetailView(movie: selectedMovie!, isShowingDetail: $viewModel.isShowingDetail)
             }
         }
     }
 }
 
-struct MovieGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        MovieGridView()
-    }
-}
+//struct MovieGridView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MovieGridView()
+//    }
+//}

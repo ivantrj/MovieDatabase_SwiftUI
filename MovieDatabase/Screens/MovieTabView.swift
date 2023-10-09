@@ -21,14 +21,20 @@ struct MovieTabView: View {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
+            
+            WatchlistView()
+                .tabItem{
+                    Image(systemName: "bookmark")
+                    Text("Watch List")
+                }
         }
     }
 }
 
 
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        MovieTabView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MovieTabView()
+//    }
+//}
